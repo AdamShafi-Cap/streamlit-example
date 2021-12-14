@@ -15,12 +15,12 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-@st.cache()
-def app_entry():
-    user_input = st.text_input("Enter Key")
+user_input = st.text_input("Enter Key")
+@st.cache(suppress_st_warning=True)
+def app_entry(user_input):
     return user_input == os.environ["secret_test "]
     
-while app_entry()==True:
+while app_entry(user_input)==True:
     with st.echo(code_location='below'):
         total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
         num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
