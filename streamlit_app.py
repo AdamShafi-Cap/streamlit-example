@@ -3,7 +3,6 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-import os
 
 """
 # Welcome to Streamlit!
@@ -19,7 +18,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 user_input = st.text_input("Enter Key")
 @st.cache(suppress_st_warning=True)
 def app_entry(user_input):
-    return user_input == os.environ["secret_test "]
+    return user_input == st.secrets["secret_test "]
     
 while app_entry(user_input)==True:
     with st.echo(code_location='below'):
