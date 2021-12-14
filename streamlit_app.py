@@ -19,7 +19,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 def app_entry():
     user_input = st.text_input("Enter Key")
-    return user_input == st.secrets["secret_test "]
+    return user_input == st.secrets["secret_test"]
     
 while app_entry()==True:
     with st.echo(code_location='below'):
